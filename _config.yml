@@ -1,56 +1,59 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Jason Atoms
-email: atomstech@pm.me
-description: >- # this means to ignore newlines until "baseurl:"
+# ----------------------------------------
+# SITE SETTINGS
+# ----------------------------------------
+title: "Jason Atoms"
+email: "atomstech@pm.me"
+description: >-
   I’m a computer engineer focused on building streamlined software solutions
-                    that drive tangible results. I love pushing boundaries in web development,
-                    automation, and emerging tech.
-baseurl: "" # the subpath of your site, e.g. /blog
-destination: docs
-url: "https://jasonatoms.com" # the base hostname & protocol for your site, e.g. http://example.com
+  that drive tangible results. I love pushing boundaries in web development,
+  automation, and emerging tech.
+
+baseurl: "" # Keep empty for root deployment
+url: "https://jasonatoms.com" # Base site URL
+
+# ----------------------------------------
+# SEO & SOCIAL (Optional for future)
+# ----------------------------------------
 # twitter_username: jekyllrb
 github_username: jasonatoms
 
-# Build settings
-theme: minima
-home_layout: home
+# ----------------------------------------
+# BUILD SETTINGS
+# ----------------------------------------
+theme: minima # Using Minima theme (Consider switching if customization is needed)
 plugins:
-  - jekyll-feed
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - jekyll-feed # RSS Feed Support
+
+# Output Directory (For GitHub Pages /docs deployment)
+destination: docs
+
+# Default layout for homepage
+home_layout: home
+
+# Custom Permalink structure for blog posts
+permalink: /blog/:title/
+
+# ----------------------------------------
+# COLLECTIONS & CONTENT STRUCTURE
+# ----------------------------------------
+collections:
+  blog_posts:
+    output: true
+    permalink: /blog/:title/
+
+# ----------------------------------------
+# EXCLUDED FILES & DIRECTORIES
+# ----------------------------------------
+exclude:
+  - README.md
+  - .gitignore
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
